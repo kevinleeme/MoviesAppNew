@@ -1,0 +1,13 @@
+<h3> Search the database for one of the following movies: Life of Pi, Shutter Island, Fight Club </h3> 
+
+<%= form_tag "/", method: "GET" do %>
+<%= text_field_tag :q, params[:q] %>
+<%= submit_tag "Search" %>
+<br><br>
+<% end %>
+
+<% @movies.each do |x| %>
+<p><%= x.title %></p>
+<p><%= x.genre %></p>
+<p><%= x.description %></p>
+<% end %>
